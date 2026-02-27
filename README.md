@@ -149,20 +149,80 @@ runtask TASK-20250301-001 "销售数据分析" "Python 数据分析脚本"
 ```
 runtask
   ↓
-[1/6] 创建项目（GitHub + Gitee）
+[1/8] 创建项目（GitHub + Gitee）
   ↓
-[2/6] 等待仓库准备
+[2/8] 等待仓库准备
   ↓
-[3/6] 克隆项目到本地
+[3/8] 克隆项目到本地
   ↓
-[4/6] 创建任务文件
+[4/8] 创建任务文件
   ↓
-[5/6] 提交并推送到双平台
+[5/8] 提交并推送到双平台
   ↓
-[6/6] 启动紫微智控处理流程
+[6/8] T-01 任务分解
   ↓
-T-01 → T-02 → T-03 → 交付 → 归档
+[7/8] 代码生成 + 审计 + 交付 + 邮件
+  ↓
+[8/8] 设置自动归档（8 小时后）
 ```
+
+---
+
+## 📁 交付文件存储位置
+
+### 项目目录
+
+**位置**: `/home/admin/Ziwei/projects/[任务 ID]/`
+
+**示例**:
+```bash
+/home/admin/Ziwei/projects/TASK-20250227-001/
+├── README.md              # 项目说明
+├── TASK.md                # 任务状态（Done）
+├── decomposition.md       # 任务分解报告
+├── src/                   # 源代码目录
+├── docs/                  # 文档目录
+└── tests/                 # 测试目录
+```
+
+### 双平台仓库
+
+**GitHub**: `https://github.com/ziwei-control/[任务 ID]`
+
+**Gitee**: `https://gitee.com/pandac0/[任务 ID]`
+
+**示例**:
+```bash
+# GitHub
+https://github.com/ziwei-control/TASK-20250227-001
+
+# Gitee
+https://gitee.com/pandac0/TASK-20250227-001
+```
+
+### 归档位置
+
+**8 小时后自动归档到**:
+- ✅ GitHub 主仓库
+- ✅ Gitee 主仓库
+- ✅ 本地保留（不删除）
+
+**归档目录**:
+```
+/home/admin/Ziwei/repo_archive/SUCCESS/
+├── PENDING_RELEASE/   # 高分待发布项目
+├── ARCHIVE/           # 历史存档
+└── FAILED_CANDIDATES/ # 低分候选
+```
+
+---
+
+## 📧 交付通知
+
+**任务完成后自动发送邮件**:
+- **收件人**: 康纳 (19922307306@189.cn)
+- **抄送**: Martin (pandac00@163.com)
+- **内容**: 任务信息、仓库地址、交付内容
 
 ---
 
